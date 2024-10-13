@@ -1,27 +1,67 @@
-# Redirect
+# ngx-bootstrap Dropdown Wrapper: Sample Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+This is a simple sample application built to demonstrate how to extend and configure the capabilities of the ngx-bootstrap dropdown module. The project explores various dropdown functionalities, including hover-based interaction, toolbox features, nested menus, and the integration of Angular CDK for advanced behaviors like dragging.
 
-## Development server
+## Key Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Hover-based Dropdown**:  
+   The default click behavior of ngx-bootstrap dropdowns is replaced with a hover-based interaction, providing a more intuitive user experience.
 
-## Code scaffolding
+2. **Horizontal Menu**:  
+   A sample horizontal menu is included to show how the dropdown can be used to display tool options. It ensures proper positioning even when the toolbox is maximized and includes a loading spinner to demonstrate dynamic width adaptation.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. **Draggable Div**:  
+   Using Angular CDK, some divs are made draggable, to showcase the adaptive positioning of the horizontal menu.
 
-## Build
+4. **Nested Menus**:  
+   A sidebar is included to demonstrate how the dropdown component can be configured to support nested menus, showcasing how multi-level menus can be easily handled.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+5. **Recursive Component Handling**:  
+   The application also demonstrates how to handle recursive rendering of components, which is particularly useful for building deeply nested dropdowns.
 
-## Running unit tests
+## Purpose
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The main goal of this project is to showcase different configurations and behaviors that can be applied to ngx-bootstrap dropdowns. It serves as a practical reference for implementing:
 
-## Running end-to-end tests
+- Hover-based dropdown triggers
+- Horizontal menu with variable width
+- Draggable and maximizable divs to showcase how to handle adaptive positioning
+- Nested menus with recursive component handling
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Getting Started
 
-## Further help
+### Prerequisites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Node.js (LTS recommended)
+- Angular CLI
+- ngx-bootstrap (Dropdown module)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/aabir121/custom-menu.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd custom-menu
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Run the application:
+
+    ```bash
+    ng serve
+    ```
+
+5. Open your browser at `http://localhost:4200/` to see the application in action.
+
+The code is structured to make it easy to extend or modify as needed.
