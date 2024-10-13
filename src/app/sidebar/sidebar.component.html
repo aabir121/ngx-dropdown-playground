@@ -1,0 +1,60 @@
+<div class="sidebar-container">
+  <div class="menu-group">
+    <div class="menu-item" tooltip="Home">
+      <i class="fas fa-home"></i>
+    </div>
+    <div class="menu-item" tooltip="Users">
+      <i class="fas fa-users"></i>
+    </div>
+    <div class="menu-item" tooltip="Analytics">
+      <i class="fas fa-chart-line"></i>
+    </div>
+    <div class="menu-item" tooltip="Settings">
+      <i class="fas fa-cogs"></i>
+    </div>
+    <div class="menu-item" tooltip="Messages">
+      <i class="fas fa-envelope"></i>
+    </div>
+  </div>
+  <div class="menu-group">
+    <div class="menu-item" >
+      <app-hover-menu placement="right" [actAsMenu]="true" menuClass="sidebar-main-menu sidebar-menu">
+        <i container class="fas fa-bell"></i>
+        <ul id="dropdown-nested" hover-content class="list-unstyled mb-0"
+            role="menu" aria-labelledby="button-nested">
+          <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action</a></li>
+
+          <app-hover-menu placement="right" container="#new-parent" [actAsMenu]="true" menuClass="sidebar-menu">
+            <li container id="new-parent" role="menuitem" class="dropdown-item d-flex align-items-center justify-content-between">
+              Hover Menu 1 <span class="fa fa-angle-right"></span>
+            </li>
+            <ul hover-content class="list-unstyled mb-0" role="menu">
+              <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action1</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action2</a></li>
+            </ul>
+          </app-hover-menu>
+          <app-hover-menu placement="right" container="#new-parent2" [actAsMenu]="true" menuClass="sidebar-menu">
+            <li container id="new-parent2" role="menuitem" class="dropdown-item d-flex align-items-center justify-content-between">
+              Hover menu 2 <span class="fa fa-angle-right"></span>
+            </li>
+            <ul hover-content class="list-unstyled mb-0" role="menu">
+              <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action1</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Action2</a></li>
+            </ul>
+          </app-hover-menu>
+
+          <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Something else here</a>
+          </li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="." fragment="nested-dropdowns">Separated link</a></li>
+        </ul>
+
+      </app-hover-menu>
+    </div>
+    <div class="menu-item" tooltip="Help">
+      <i class="fas fa-question-circle"></i>
+    </div>
+  </div>
+</div>

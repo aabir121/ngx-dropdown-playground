@@ -1,0 +1,22 @@
+<div [class]="customClass"
+     [ngClass]="customNgClass"
+     (mouseenter)="showMenu()"
+     (mouseleave)="hideMenu()"
+     dropdown
+     #dropdown="bs-dropdown"
+     [container]="container"
+     [isDisabled]="disabled"
+     [placement]="placement"
+     [isOpen]="isMenuOpen"
+     [dropup]="true">
+
+  <!-- Project any header content -->
+  <ng-content select="[container]"></ng-content>
+
+  <div *dropdownMenu class="dropdown-menu"
+       [ngClass]="menuClass"
+       (mouseenter)="showMenu()"
+       (mouseleave)="hideMenu()">
+    <ng-content select="[hover-content]"></ng-content>
+  </div>
+</div>

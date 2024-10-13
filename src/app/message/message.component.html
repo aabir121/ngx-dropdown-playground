@@ -1,0 +1,82 @@
+<!-- <div class="content border p-3 mb-3 message position-relative toggle-div"
+[ngClass]="{ 'maximized': isMaximized, 'initial-size': !isMaximized, 'd-none': isMaximized && msg.id !== maximizedId }"
+  dropdown #dropdown="bs-dropdown"
+  container="body"
+  placement="top right"
+  [dropup]="true"
+  dropdownToggle
+  [isOpen]="isOpen"
+  [insideClick]="true"
+  (mouseenter)="showMenu()"
+  (mouseleave)="hideWithDelay()">
+
+    <h4>{{ msg.id }}</h4>
+    <h5>{{ msg.content }}</h5>
+    <p>{{ msg.timestamp }}</p>
+    <div class="position-absolute top-0 end-0 me-2" (click)="toggleMaximize()">
+        @if(!isMaximized) {
+            <i class="fa fa-maximize"></i>
+        }
+        @else {
+            <i class="fa fa-minimize"></i>
+        }
+    </div>
+
+        <ul *dropdownMenu class="dropdown-menu horizontal-dropdown dropdown-menu-right"
+        (mouseenter)="showMenu()"
+        (mouseleave)="hideWithDelay()"
+        role="menu" aria-labelledby="dropdownMenuButton">
+        @if (loading$ | async; as loading ) {
+        <li role="menuitem" class="dropdown-item"><i class="fa fa-spinner fa-spin"></i></li>
+        }
+          <li role="menuitem" class="dropdown-item">
+            <a (click)="editMessage()"><i class="fa fa-pencil"></i></a>
+          </li>
+          <li role="menuitem" class="dropdown-item">
+            <a (click)="deleteMessage()"><i class="fa fa-trash"></i></a>
+          </li>
+        </ul>
+  </div> -->
+<div class="content border mb-3 message position-relative toggle-div" cdkDrag (cdkDragStarted)="dragStarted(msg.id)"
+     (cdkDragEnded)="dragEnded(msg.id)"
+     [ngClass]="{ 'maximized': isMaximized, 'initial-size': !isMaximized, 'd-none': isMaximized && msg.id !== maximizedId }"
+>
+  <app-hover-menu customClass="p-3 h-100 w-100"
+                  class="h-100 w-100"
+                  menuClass="message-hover-menu"
+                  placement="top right"
+                  (onShow)="onShow()"
+                  (onHide)="onHide()"
+  >
+    <!-- Dropdown header -->
+    <div container>
+      <h4>{{ msg.id }}</h4>
+      <h5>{{ msg.content }}</h5>
+      <p>{{ msg.timestamp }}</p>
+      <div class="position-absolute top-0 end-0 me-2" (click)="toggleMaximize()">
+        @if(!isMaximized) {
+        <i class="fa fa-maximize"></i>
+        }
+        @else {
+        <i class="fa fa-minimize"></i>
+        }
+      </div>
+    </div>
+
+    <ul hover-content class="horizontal-dropdown" role="menu">
+      <!-- Show spinner when loading -->
+      <li *ngIf="loading$ | async" role="menuitem" class="dropdown-item">
+        <i class="fa fa-spinner fa-spin"></i>
+      </li>
+      <li role="menuitem" class="dropdown-item">
+        <a (click)="editMessage()"><i class="fa fa-pencil"></i></a>
+      </li>
+      <li role="menuitem" class="dropdown-item">
+        <a (click)="deleteMessage()"><i class="fa fa-trash"></i></a>
+      </li>
+    </ul>
+
+
+  </app-hover-menu>
+
+</div>
