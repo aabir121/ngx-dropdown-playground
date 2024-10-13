@@ -1,5 +1,5 @@
 {
-  "name": "custom-menu",
+  "name": "ngx-dropdown-playground",
   "description": "Provides a sample of custom menu and submenu functionalities using ngx-bootstrap",
   "version": "0.0.0",
   "scripts": {
